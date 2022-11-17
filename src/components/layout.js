@@ -13,15 +13,18 @@ import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+  const data = useStaticQuery(
+  {
+    "data": {
+      "site": {
+        "siteMetadata": {
+          "title": "Gatsby Default Starter"
         }
       }
-    }
-  `)
+    },
+    "extensions": {}
+  }
+  )
 
   return (
     <>
@@ -48,6 +51,7 @@ const Layout = ({ children }) => {
     </>
   )
 }
+
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
